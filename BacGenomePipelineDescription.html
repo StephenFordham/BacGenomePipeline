@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <meta charset="utf-8">
+
+
+
+    <title></title>
+<body>
+
+
+<div class="card">
+    <div >
+        <br>
+        <h3 class="text-primary" style="margin-left: 65px;"><b>Complete Bacterial Genome Assembly and Annotation Pipeline</b></h3>
+        <br>
+        <p class="text-primary" style="margin-left: 65px;">Program developed by Stephen Fordham</p>
+        <br>
+        <img style="margin-left: 65px;" src="static/nanopore_squiggle.png" height=70px width="800px">
+
+    </div>
+    <br>
+    <br>
+    <h3 class="text-primary" style="margin-left: 65px;"><b>General Description</b></h3>
+    <hr>
+
+    <p class="text-dark"  style="width: 800px; margin-left: 65px;">
+        Complete bacterial genome assembly pipeline. Assembled and annotated bacterial genomes can be created with only
+        raw reads as input! BacGenomePipeline can accept either fastq or gzipped fastq files. Relax and grab a coffee while BacGenomePipeline does the genomic heavy lifting.
+    </p>
+
+    <p class="text-dark" style="width: 800px; margin-left: 65px;">
+        This pipeline filters raw reads to produce the best 500mb reads.
+        The filtering process also places weight on read quality, to ensure small high quality reads are not discarded.
+        This is considered vital to aid the recovery of small plasmids present within bacterial strains.
+    </p>
+
+    <p class="text-dark" style="width: 800px; margin-left: 65px;">
+        Optionally, the user can run Nanostat to assess read quality metrics. The best reads are then assembled using the
+        flye genome assembler with settings adjusted to help recovery of plasmids with an imbalanced distribution. The assembly
+        is then polished with one round of medaka-consensus polishing. The polished assembly is annotated using staramr which
+        scans scans bacterial genome contigs against the ResFinder, PointFinder, and PlasmidFinder databases
+        (used by the ResFinder webservice and other webservices offered by the Center for Genomic Epidemiology) and compiles
+        a summary report of detected antimicrobial resistance genes.
+    </p>
+
+    <div >
+        <h3 class="text-primary" style="width: 500px; margin-left: 65px;"><b>Usage Instructions</b></h3>
+        <hr>
+    </div>
+    <div class="alert alert-secondary">
+          <pre>
+
+              <b>usage: BacGenomePipeline.py [-h] -f  [-n] -d  -p -a</b>
+
+              Complete Bacterial Genome Assembly and Annotation Pipeline
+
+              optional arguments:
+              -h,  --help           show this help message and exit
+              -f , --fastq_file     Specify an input Fastq file for the Pipeline
+              -n,  --nanostats      Optionally run a NanoStats report on your filtered read set
+              -d , --flye_dir       Specify a Flye Genome assembly directory name
+              -p , --polished_dir   Specify a Medaka Polished genome directory name
+              -a , --amr_dir        Specify a Antimicrobial resistance directory name
+          </pre>
+    </div>
+    <br>
+
+
+    <h3 class="text-primary" style="margin-left: 65px;"><b>Example Usage (Short argument flags)</b></h3>
+    <hr>
+
+    <div class="alert alert-secondary">
+          <pre><b>
+           python BacGenomePipeline.py -f reads.fastq -n -d flye_amr_dir -p pol_dir -a bac_amr_dir
+          </b></pre>
+    </div>
+
+    <h3 class="text-primary" style="margin-left: 65px;"><b>Example Usage (Long argument flags)</b></h3>
+    <hr>
+
+    <div class="alert alert-secondary">
+          <pre><b>
+          python BacGenomePipeline.py --fastq_file reads.fastq --nanostats --flye_dir flye_asm_dir --polished_dir complete_pol_dir --amr_dir bac_amr_dir
+          </b></pre>
+    </div>
+
+    <div >
+        <h3 class="text-primary" style="margin-left: 65px;"><b>Usage Recommendations</b></h3>
+        <hr>
+
+    </div>
+
+    <div class="alert alert-secondary">
+          <pre>
+
+          I recommend running BacGenomePipeline from your virtual environment.
+          To run BacGenomePipeline anywhere, make sure to run the following commands on your terminal:
+
+              <b>chmod +x BacGenomePipeline.py</b>
+
+          Move executable to your selected bin directory
+          To find bin path on Linux, simply run:
+
+              <b>echo $PATH</b>
+
+          Then copy script to bin path, for example:
+
+              <b>cp BacGenomePipeline.py /home/stephen/.local/bin/BacGenomePipeline</b>
+
+          Now simply run the script as follows:
+
+              <b>BacGenomePipeline -f reads.fastq -n -d flye_amr_dir -p pol_dir -a bac_amr_dir</b>
+
+          Alternatively, run BacGenomePipeline as shown below. Here, the fastq file <b>must</b> be
+          in the same working directory as the script calling it.
+
+
+          </pre>
+    </div>
+
+    <div class="alert alert-secondary">
+
+        <h3 class="text-primary" style="margin-left: 65px;"><b>Running BacGenomePipeline Guide</b></h3>
+        <hr>
+      
+        <br>
+        <pre>
+          <img class="animated-gif"  src="static/BacGenomePipeline.gif">
+          </pre>
+
+
+    </div>
+
+    <h3 class="text-primary" style="margin-left: 65px;"><b>Example Output</b></h3>
+    <hr>
+    <div class="alert alert-secondary">
+        <br>
+        <p class="text-dark" style="width: 800px; margin-left: 65px;">
+            Assembly of extensively-drug resistant (XDR) strain <i>Klebsiella pneumoniae</i> ATCC700721
+            <br>assembly.gfa file in flye directory rendered via Bandage
+        </p>
+        <p class="text-dark" style="width: 800px; margin-left: 65px;">
+            <br>1 completely closed Chromosome
+            <br>5 completely closed plasmids
+            <br>Figure 1
+        </p>
+        <p class="text-dark" style="width: 800px; margin-left: 65px;">
+            Sample AMR data available via amr_dir
+            <br>Figure 2
+        </p>
+
+    </div>
+
+
+    <div class="row">
+        <div class="column">
+            <img  src="static/bacterial_assembly.png" style="margin-left: 175px;"  height=500px width="500px">
+            <figcaption style="margin-left: 175px;">Fig.1 - <i>Klebsiella pneumoniae</i> ATCC700721 assembly.</figcaption>
+        </div>
+        <div class="column">
+            <br><br><br>
+            <img  src="static/bac_data_update.png" style="margin-left: 175px;"  height=300px width="550px">
+            <br><br><br><br><br><br>
+            <figcaption style="margin-left: 175px;">Fig.2 - <i>Klebsiella pneumoniae</i> AMR data.</figcaption>
+        </div>
+
+    </div>
+    <br><br>
+    <h3 class="text-primary" style="margin-left: 65px;"><b>Installation requirements</b></h3>
+    <hr>
+    <div class="alert alert-secondary">
+        <br>
+        <pre>
+              To run BacGenomePipeline make sure you install the following programs.
+
+              1. medaka
+              2. NanoStat
+              3. staramr
+              4. filtlong
+              5. flye
+              6. numpy
+
+              filtlong and flye require conda to install. To install conda on linux, follow the instructions listed <a
+                href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html">here</a>
+
+              On your linux terminal run in the following order:
+              <b>
+              pip install medaka==1.2.1
+              pip install NanoStat==1.5.0
+              pip install staramr==0.7.2
+              conda install -c bioconda filtlong==0.2.0
+              conda install -c bioconda flye==2.8.1
+              pip install numpy==1.19.5
+              </b>
+              if promoted to install new packages after conda installation, e.g.
+              added / updated specs:
+                  - flye==2.8.1
+
+              update other packages ...
+
+              enter N
+
+              for medaka to run, it is necessary to downgrade to numpy 1.19
+          </pre>
+
+    </div>
+
+    <h3 class="text-primary" style="margin-left: 65px;"><b>References</b></h3>
+    <hr>
+    <div class="alert alert-secondary">
+        <br>
+        <pre>
+              <u><b>Program References:</b></u>
+              <a href="https://github.com/rrwick/Filtlong">Filtlong</a>
+              <a href="https://pypi.org/project/medaka/">Medaka</a>
+              <a href="https://pypi.org/project/NanoStat/">NanoStat</a>
+              <a href="https://anaconda.org/bioconda/flye">Flye</a>
+              <a href="https://github.com/rrwick/Filtlong">Filtlong</a>
+
+          </pre>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
