@@ -152,8 +152,6 @@ assembly.gfa file in flye directory rendered via Bandage
 
 <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/bac_data_update.png  width=650  />
 
-<br>
-
 <sub>Figure 2  Sample AMR data available via amr_dir </sub><br>
 
 
