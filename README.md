@@ -6,7 +6,7 @@
 
 <br>
 
-<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/nanopore_squiggle.png width=700 >
+<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/nanopore_squiggle.png width=1000 >
 
 ### General Description
 <hr>
@@ -76,18 +76,44 @@ in the same working directory as the script calling it.
 ### Running BacGenomePipeline Guide
 
 
- <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/BacGenomePipeline.gif>
-     
-    
-  hhfdfh  
-    
-    
-    
-     
+ <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/BacGenomePipeline.gif width=1000>
+   
+<br>   
+   
+### Example Output
+<hr>
+
+Assembly of extensively-drug resistant (XDR) strain _Klebsiella pneumoniae_ ATCC700721 <br>
+assembly.gfa file in flye directory rendered via Bandage
 
 
+1 completely closed Sample AMR data available via amr_dir <br>
+5 completely closed plasmids <br>
+Figure 1 <br>
+
+Sample AMR data available via amr_dir <br>
+Figure 2 
 
 
+<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/exampleoutput.png />
+
+### Installation requirements
+<hr>
+
+To run BacGenomePipeline make sure you install the following programs.
+
+              1. medaka
+              2. NanoStat
+              3. staramr
+              4. filtlong
+              5. flye
+              6. numpy
+
+filtlong and flye require conda to install. To install conda on linux, follow the instructions listed <a
+  href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html">here</a>
+
+
+ 
 
 
 
