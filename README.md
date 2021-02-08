@@ -25,7 +25,7 @@ Table of Contents
 
 
 ## General Description
-<hr>
+
 
 BacGenomePipeline is a complete convenience bacterial genome assembly pipeline. Assembled and annotated bacterial genomes can be created with only raw reads as input! BacGenomePipeline can accept either fastq or gzipped fastq files. Relax and grab a coffee while BacGenomePipeline does the genomic heavy lifting.
 
@@ -61,7 +61,7 @@ filtlong and flye require conda to install. To install conda on linux, follow th
               conda install -c bioconda flye==2.8.1
               pip install numpy==1.19.5
               
- if promoted to install new packages after conda installation, e.g.<br>
+ if promted to install new packages after conda installation, e.g.<br>
  added / updated specs:
               ```- flye==2.8.1```
 
@@ -72,6 +72,7 @@ filtlong and flye require conda to install. To install conda on linux, follow th
 for medaka to run, it is necessary to downgrade to numpy 1.19
 
 ## Usage Instructions
+
 
  <b>usage: python BacGenomePipeline.py [-h] -f  [-n] -d  -p -a</b>
 
@@ -132,24 +133,23 @@ in the same working directory as the script calling it.
 <br>   
    
 ## Example Output
-<hr>
+
 
 Assembly of extensively-drug resistant (XDR) strain _Klebsiella pneumoniae_ ATCC700721 <br>
 assembly.gfa file in flye directory rendered via Bandage
 
+
+<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/bacterial_assembly.png width=500 height=500/>
 
 1 completely closed Sample AMR data available via amr_dir <br>
 5 completely closed plasmids <br>
 Figure 1 <br>
 
 
-<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/bacterial_assembly.png width=500 height=500/>
+<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/bac_data_update.png width=650 height=400 />
 
 Sample AMR data available via amr_dir <br>
 Figure 2 
-
-<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/bac_data_update.png width=650 height=400 />
-
 
 <br>
 
