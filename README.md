@@ -141,16 +141,19 @@ assembly.gfa file in flye directory rendered via Bandage
 
 <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/bacterial_assembly.png width=500 height=500/>
 
+Figure 1. Whole genome assembly XDR of _K. pneumoniae_ ATCC700721 <br>
 1 completely closed Sample AMR data available via amr_dir <br>
 5 completely closed plasmids <br>
-Figure 1 <br>
 
+
+<br>
 
 <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/bac_data_update.png width=650 height=400 />
 
 <br>
-Sample AMR data available via amr_dir <br>
-Figure 2 
+
+Figure 2  Sample AMR data available via amr_dir <br>
+
 
 <br>
 
