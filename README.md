@@ -8,6 +8,22 @@
 
 <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/nanopore_squiggle.png width=1000 >
 
+Table of Contents
+=================
+
+   * [BacGenomePipeline](#bacgenomepipeline)
+     
+      * [General Description](#general-description)
+      * [Usage Instructions](#usage-instructions)
+         * [Example Usage (Short argument flags)](#example-usage-short-argument-flags)
+         * [Example Usage (Long argument flags)](#example-usage-long-argument-flags)
+         * [Usage Recommendations](#usage-recommendations)
+      * [Running BacGenomePipeline Guide](#running-bacgenomepipeline-guide)
+      * [Example Output](#example-output)
+      * [Installation requirements](#installation-requirements)
+      * [References](#references)
+
+
 ## General Description
 <hr>
 
