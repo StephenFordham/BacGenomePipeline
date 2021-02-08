@@ -33,6 +33,8 @@ This pipeline filters raw reads to produce the best 500mb reads. The filtering p
 
 Optionally, the user can run Nanostat to assess read quality metrics. The best reads are then assembled using the flye genome assembler with settings adjusted to help recovery of plasmids with an imbalanced distribution. The assembly is then polished with one round of medaka-consensus polishing. The polished assembly is annotated using staramr which scans bacterial genome contigs against the ResFinder, PointFinder, and PlasmidFinder databases (used by the ResFinder webservice and other webservices offered by the Center for Genomic Epidemiology) and compiles a summary report of detected antimicrobial resistance genes. 
 
+Currently BacGenomePipeline has been tested and runs on Linux OS.
+
 
 <br>
 
