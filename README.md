@@ -76,7 +76,7 @@ for medaka to run, it is necessary to downgrade to numpy 1.19
 ## Usage Instructions
 
 
- <b>usage: python BacGenomePipeline.py [-h] -f  [-n] -d  -p -a</b>
+```usage: python BacGenomePipeline.py [-h] -f  [-n] -d  -p -a```
 
               Complete Bacterial Genome Assembly and Annotation Pipeline
 
