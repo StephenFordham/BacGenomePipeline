@@ -21,7 +21,7 @@ Relax and grab a coffee while BacGenomePipeline does the genomic heavy lifting.<
 Optionally, the user can run Nanostat to assess read quality metrics. The best reads are then assembled <br>
 using the flye genome assembler with settings adjusted to help recovery of plasmids with an imbalanced <br>
 distribution. The assembly is then polished with one round of medaka-consensus polishing. The polished <br>
-assembly is annotated using staramr whichscans scans bacterial genome contigs against the ResFinder, <br>
+assembly is annotated using staramr which scans scans bacterial genome contigs against the ResFinder, <br>
 PointFinder, and PlasmidFinder databases (used by the ResFinder webservice and other webservices offered <br>
-by the Center for Genomic Epidemiology) and compilesa summary report of detected antimicrobial resistance <br>
+by the Center for Genomic Epidemiology) and compiles a summary report of detected antimicrobial resistance <br>
 genes. <br>
