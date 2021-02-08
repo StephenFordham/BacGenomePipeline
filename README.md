@@ -10,7 +10,7 @@
 
 ### General Description
 
-<br>Complete bacterial genome assembly pipeline. Assembled and annotated bacterial genomes can be <br>
+Complete bacterial genome assembly pipeline. Assembled and annotated bacterial genomes can be <br>
 created with only raw reads as input! BacGenomePipeline can accept either fastq or gzipped fastq files. <br>
 Relax and grab a coffee while BacGenomePipeline does the genomic heavy lifting.<br>
 
