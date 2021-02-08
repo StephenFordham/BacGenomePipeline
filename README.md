@@ -4,10 +4,15 @@
 
 ### General Description
 
+#### Program developed by Stephen Fordham
+
+<br>
+
 <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/nanopore_squiggle.png width=700 >
 
 
-Complete bacterial genome assembly pipeline. Assembled and annotated bacterial genomes can be <br>
+
+<br>Complete bacterial genome assembly pipeline. Assembled and annotated bacterial genomes can be <br>
 created with only raw reads as input! BacGenomePipeline can accept either fastq or gzipped fastq files. <br>
 Relax and grab a coffee while BacGenomePipeline does the genomic heavy lifting.<br>
 
@@ -20,4 +25,5 @@ using the flye genome assembler with settings adjusted to help recovery of plasm
 distribution. The assembly is then polished with one round of medaka-consensus polishing. The polished <br>
 assembly is annotated using staramr whichscans scans bacterial genome contigs against the ResFinder, <br>
 PointFinder, and PlasmidFinder databases (used by the ResFinder webservice and other webservices offered <br>
-by the Center for Genomic Epidemiology) and compilesa summary report of detected antimicrobial resistance genes. <br>
+by the Center for Genomic Epidemiology) and compilesa summary report of detected antimicrobial resistance <br>
+genes. <br>
