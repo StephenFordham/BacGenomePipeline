@@ -148,6 +148,7 @@ Figure 1 <br>
 
 <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/bac_data_update.png width=650 height=400 />
 
+<br>
 Sample AMR data available via amr_dir <br>
 Figure 2 
 
