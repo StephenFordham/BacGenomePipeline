@@ -27,17 +27,17 @@ Table of Contents
 ## General Description
 <hr>
 
-Complete bacterial genome assembly pipeline. Assembled and annotated bacterial genomes can be created with only raw reads as input! BacGenomePipeline can accept either fastq or gzipped fastq files. Relax and grab a coffee while BacGenomePipeline does the genomic heavy lifting.
+BacGenomePipeline is a complete convenience bacterial genome assembly pipeline. Assembled and annotated bacterial genomes can be created with only raw reads as input! BacGenomePipeline can accept either fastq or gzipped fastq files. Relax and grab a coffee while BacGenomePipeline does the genomic heavy lifting.
 
 This pipeline filters raw reads to produce the best 500mb reads. The filtering process also places weight on read quality, to ensure small high quality reads are not discarded. This is considered vital to aid the recovery of small plasmids present within bacterial strains.
 
-Optionally, the user can run Nanostat to assess read quality metrics. The best reads are then assembled using the flye genome assembler with settings adjusted to help recovery of plasmids with an imbalanced distribution. The assembly is then polished with one round of medaka-consensus polishing. The polished assembly is annotated using staramr which scans scans bacterial genome contigs against the ResFinder, PointFinder, and PlasmidFinder databases (used by the ResFinder webservice and other webservices offered by the Center for Genomic Epidemiology) and compiles a summary report of detected antimicrobial resistance genes. 
+Optionally, the user can run Nanostat to assess read quality metrics. The best reads are then assembled using the flye genome assembler with settings adjusted to help recovery of plasmids with an imbalanced distribution. The assembly is then polished with one round of medaka-consensus polishing. The polished assembly is annotated using staramr which scans bacterial genome contigs against the ResFinder, PointFinder, and PlasmidFinder databases (used by the ResFinder webservice and other webservices offered by the Center for Genomic Epidemiology) and compiles a summary report of detected antimicrobial resistance genes. 
 
 
 <br>
 
 ## Installation requirements
-<hr>
+
 
 To run BacGenomePipeline make sure you install the following programs.
 
@@ -72,7 +72,7 @@ filtlong and flye require conda to install. To install conda on linux, follow th
 for medaka to run, it is necessary to downgrade to numpy 1.19
 
 ## Usage Instructions
-<hr>
+
  <b>usage: python BacGenomePipeline.py [-h] -f  [-n] -d  -p -a</b>
 
               Complete Bacterial Genome Assembly and Annotation Pipeline
@@ -142,17 +142,19 @@ assembly.gfa file in flye directory rendered via Bandage
 5 completely closed plasmids <br>
 Figure 1 <br>
 
+
+<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/bacterial_assembly.png width=500 height=500/>
+
 Sample AMR data available via amr_dir <br>
 Figure 2 
 
-
-<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/exampleoutput.png />
+<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/bac_data_update.png width=650 height=400 />
 
 
 <br>
 
 ## References
-<hr>
+
 
 <u><b>Program References:</b></u><br>
 <a href="https://github.com/rrwick/Filtlong">Filtlong</a> <br>
