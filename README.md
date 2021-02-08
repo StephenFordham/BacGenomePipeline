@@ -2,15 +2,13 @@
 
 ## Complete Bacterial Genome Assembly and Annotation Pipeline
 
-### General Description
-
 #### Program developed by Stephen Fordham
 
 <br>
 
 <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/nanopore_squiggle.png width=700 >
 
-
+### General Description
 
 <br>Complete bacterial genome assembly pipeline. Assembled and annotated bacterial genomes can be <br>
 created with only raw reads as input! BacGenomePipeline can accept either fastq or gzipped fastq files. <br>
