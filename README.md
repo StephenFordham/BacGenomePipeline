@@ -14,13 +14,13 @@ Table of Contents
    * [BacGenomePipeline](#bacgenomepipeline)
      
       * [General Description](#general-description)
+      * [Installation requirements](#installation-requirements)
       * [Usage Instructions](#usage-instructions)
          * [Example Usage (Short argument flags)](#example-usage-short-argument-flags)
          * [Example Usage (Long argument flags)](#example-usage-long-argument-flags)
          * [Usage Recommendations](#usage-recommendations)
       * [Running BacGenomePipeline Guide](#running-bacgenomepipeline-guide)
       * [Example Output](#example-output)
-      * [Installation requirements](#installation-requirements)
       * [References](#references)
 
 
@@ -35,6 +35,41 @@ Optionally, the user can run Nanostat to assess read quality metrics. The best r
 
 
 <br>
+
+## Installation requirements
+<hr>
+
+To run BacGenomePipeline make sure you install the following programs.
+
+              1. medaka
+              2. NanoStat
+              3. staramr
+              4. filtlong
+              5. flye
+              6. numpy
+
+filtlong and flye require conda to install. To install conda on linux, follow the instructions listed <a
+  href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html">here</a>
+  
+  
+ On your linux terminal run in the **following order**:
+ 
+              pip install medaka==1.2.1
+              pip install NanoStat==1.5.0
+              pip install staramr==0.7.2
+              conda install -c bioconda filtlong==0.2.0
+              conda install -c bioconda flye==2.8.1
+              pip install numpy==1.19.5
+              
+ if promoted to install new packages after conda installation, e.g.<br>
+ added / updated specs:
+              ```- flye==2.8.1```
+
+              update other packages ...
+
+              enter N
+
+for medaka to run, it is necessary to downgrade to numpy 1.19
 
 ## Usage Instructions
 <hr>
@@ -113,41 +148,9 @@ Figure 2
 
 <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/exampleoutput.png />
 
-## Installation requirements
-<hr>
 
-To run BacGenomePipeline make sure you install the following programs.
-
-              1. medaka
-              2. NanoStat
-              3. staramr
-              4. filtlong
-              5. flye
-              6. numpy
-
-filtlong and flye require conda to install. To install conda on linux, follow the instructions listed <a
-  href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html">here</a>
-  
-  
- On your linux terminal run in the **following order**:
- 
-              pip install medaka==1.2.1
-              pip install NanoStat==1.5.0
-              pip install staramr==0.7.2
-              conda install -c bioconda filtlong==0.2.0
-              conda install -c bioconda flye==2.8.1
-              pip install numpy==1.19.5
-              
- if promoted to install new packages after conda installation, e.g.<br>
- added / updated specs:
-              ```- flye==2.8.1```
-
-              update other packages ...
-
-              enter N
-
-for medaka to run, it is necessary to downgrade to numpy 1.19
 <br>
+
 ## References
 <hr>
 
