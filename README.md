@@ -146,7 +146,7 @@ assembly.gfa file in flye directory rendered via Bandage
 
 
 <sub>Figure 1. Whole genome assembly XDR of _K. pneumoniae_ ATCC700721 <br>
-1 completely closed Sample AMR data available via amr_dir <br>
+1 completely closed chromosome <br>
 5 completely closed plasmids <br>
 </sub>
 
