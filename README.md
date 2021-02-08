@@ -8,7 +8,7 @@
 
 <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/nanopore_squiggle.png width=1000 >
 
-### General Description
+## General Description
 <hr>
 
 Complete bacterial genome assembly pipeline. Assembled and annotated bacterial genomes can be created with only raw reads as input! BacGenomePipeline can accept either fastq or gzipped fastq files. Relax and grab a coffee while BacGenomePipeline does the genomic heavy lifting.
@@ -20,7 +20,7 @@ Optionally, the user can run Nanostat to assess read quality metrics. The best r
 
 <br>
 
-### Usage Instructions
+## Usage Instructions
 <hr>
  <b>usage: python BacGenomePipeline.py [-h] -f  [-n] -d  -p -a</b>
 
@@ -73,14 +73,14 @@ in the same working directory as the script calling it.
 
 <br>
  
-### Running BacGenomePipeline Guide
+## Running BacGenomePipeline Guide
 
 
  <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/BacGenomePipeline.gif width=1000>
    
 <br>   
    
-### Example Output
+## Example Output
 <hr>
 
 Assembly of extensively-drug resistant (XDR) strain _Klebsiella pneumoniae_ ATCC700721 <br>
@@ -97,7 +97,7 @@ Figure 2
 
 <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/exampleoutput.png />
 
-### Installation requirements
+## Installation requirements
 <hr>
 
 To run BacGenomePipeline make sure you install the following programs.
@@ -111,6 +111,38 @@ To run BacGenomePipeline make sure you install the following programs.
 
 filtlong and flye require conda to install. To install conda on linux, follow the instructions listed <a
   href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html">here</a>
+  
+  
+ On your linux terminal run in the **following order**:
+ 
+              pip install medaka==1.2.1
+              pip install NanoStat==1.5.0
+              pip install staramr==0.7.2
+              conda install -c bioconda filtlong==0.2.0
+              conda install -c bioconda flye==2.8.1
+              pip install numpy==1.19.5
+              
+ if promoted to install new packages after conda installation, e.g.<br>
+ added / updated specs:
+              ```- flye==2.8.1```
+
+              update other packages ...
+
+              enter N
+
+for medaka to run, it is necessary to downgrade to numpy 1.19
+<br>
+## References
+<hr>
+
+<u><b>Program References:</b></u><br>
+<a href="https://github.com/rrwick/Filtlong">Filtlong</a> <br>
+<a href="https://pypi.org/project/medaka/">Medaka</a> <br>
+<a href="https://pypi.org/project/NanoStat/">NanoStat</a> <br>
+<a href="https://anaconda.org/bioconda/flye">Flye</a> <br>
+<a href="https://github.com/rrwick/Filtlong">Filtlong</a> <br>
+
+
 
 
  
