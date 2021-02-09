@@ -73,6 +73,10 @@ filtlong and flye require conda to install. To install conda on linux, follow th
 
 for medaka to run, it is necessary to downgrade to numpy 1.19
 
+To install run the followig command on your terminal:
+
+    git clone https://github.com/StephenFordham/BacGenomePipeline.git
+
 ## Usage Instructions
 
 
