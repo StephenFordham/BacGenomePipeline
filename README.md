@@ -4,6 +4,25 @@
 
 #### Program developed by Stephen Fordham
 
+
+Table of Contents
+=================
+
+   * [BacGenomePipeline](#bacgenomepipeline)
+      * [Complete Bacterial Genome Assembly and Annotation Pipeline](#complete-bacterial-genome-assembly-and-annotation-pipeline)
+      * [General Description](#general-description)
+      * [Installation requirements](#installation-requirements)
+         * [Conda Install](#conda-install)
+         * [Pip Install](#pip-install)
+      * [Usage Instructions](#usage-instructions)
+         * [Example Usage (Short argument flags)](#example-usage-short-argument-flags)
+         * [Example Usage (Long argument flags)](#example-usage-long-argument-flags)
+         * [Terminal Output](#terminal-output)
+      * [Example Output](#example-output)
+      * [References](#references)
+
+
+
 <br>
 
 <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/nanopore_squiggle.png width=1000 >
