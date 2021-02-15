@@ -72,7 +72,7 @@ Alternatively you can run the following commands:
 ## Usage Instructions
 
 
-```usage: BacGenomePipeline.py [-h] -f  [-n] -d  -p -a```
+```usage: BacGenomePipeline [-h] -f  [-n] -d  -p -a```
 
               Complete Bacterial Genome Assembly and Annotation Pipeline
 
