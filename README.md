@@ -39,48 +39,36 @@ Currently BacGenomePipeline has been tested and runs on Linux OS.
 <br>
 
 ## Installation requirements
+### Conda Install
 
+The simplest way to install BacGenomePipeline is running the following command:
 
-To run BacGenomePipeline make sure you install the following programs.
+    conda install -c stephenfordham bacgenomepipeline
 
-              1. medaka
-              2. NanoStat
-              3. staramr
-              4. filtlong
-              5. flye
-              6. numpy
+I recommend installing BacGenomePipeline in a conda virtual environment:
+For example:
 
-filtlong and flye require conda to install. To install conda on linux, follow the instructions listed <a
-  href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html">here</a>
-  
-  
- On your linux terminal run in the **following order**:
- 
-              pip install medaka==1.2.1
-              pip install NanoStat==1.5.0
-              pip install staramr==0.7.2
-              conda install -c bioconda filtlong==0.2.0
-              conda install -c bioconda flye==2.8.1
-              pip install numpy==1.19.5
-              
- if promted to install new packages after conda installation, e.g.<br>
- added / updated specs:
-              ```- flye==2.8.1```
+    conda create -n bio_venv
+    
+    conda activate bio_venv
+    
+    (bio_venv) conda install -c stephenfordham bacgenomepipeline
 
-              update other packages ...
+Enter y, when promoted to install dependenies in your terminal window. 
 
-              enter N
+### Pip Install
 
-for medaka to run, it is necessary to downgrade to numpy 1.19
+Alternatively you can run the following commands:
 
-To install run the followig command on your terminal:
-
-    git clone https://github.com/StephenFordham/BacGenomePipeline.git
+     pip install BacGenomePipeline
+     conda install -c bioconda filtlong==0.2.0
+     conda install -c bioconda flye==2.8.1
+     
 
 ## Usage Instructions
 
 
-```usage: python BacGenomePipeline.py [-h] -f  [-n] -d  -p -a```
+```usage: BacGenomePipeline.py [-h] -f  [-n] -d  -p -a```
 
               Complete Bacterial Genome Assembly and Annotation Pipeline
 
@@ -95,41 +83,15 @@ To install run the followig command on your terminal:
        
 ### Example Usage (Short argument flags)
 
-    python BacGenomePipeline.py -f reads.fastq -n -d flye_amr_dir -p pol_dir -a bac_amr_dir
+    BacGenomePipeline -f reads.fastq -n -d flye_amr_dir -p pol_dir -a bac_amr_dir
     
 ### Example Usage (Long argument flags)
 
-    python BacGenomePipeline.py --fastq_file reads.fastq --nanostats --flye_dir flye_asm_dir --polished_dir complete_pol_dir --amr_dir bac_amr_dir
+    BacGenomePipeline --fastq_file reads.fastq --nanostats --flye_dir flye_asm_dir --polished_dir complete_pol_dir --amr_dir bac_amr_dir
     
 <br>
 
 
-### Usage Recommendations
-<hr>
-
-I recommend running BacGenomePipeline from your virtual environment.
-To run BacGenomePipeline anywhere, make sure to run the following commands on your terminal:
-
-    chmod +x BacGenomePipeline.py
-    
-Move executable to your selected bin directory
-To find bin path on Linux, simply run:
- 
-     echo $PATH
-     
-Then copy script to bin path, for example:  
-    
-    cp BacGenomePipeline.py /home/stephen/.local/bin/BacGenomePipeline
-    
- Now simply run the script as follows:
- 
-    BacGenomePipeline -f reads.fastq -n -d flye_amr_dir -p pol_dir -a bac_amr_dir
-    
- 
-Alternatively, run BacGenomePipeline as shown below. Here, the fastq file **must** be
-in the same working directory as the script calling it. 
-
-<br>
  
 ## Running BacGenomePipeline Guide
 
@@ -172,6 +134,9 @@ assembly.gfa file in flye directory rendered via Bandage
 <a href="https://pypi.org/project/NanoStat/">NanoStat</a> <br>
 <a href="https://anaconda.org/bioconda/flye">Flye</a> <br>
 <a href="https://github.com/rrwick/Filtlong">Filtlong</a> <br>
+
+
+
 
 
 
