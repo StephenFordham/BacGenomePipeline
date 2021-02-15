@@ -1,8 +1,10 @@
 # BacGenomePipeline
 
 ## Complete Bacterial Genome Assembly and Annotation Pipeline
-
 #### Program developed by Stephen Fordham
+<br>
+
+<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/nanopore_squiggle.png width=1000 >
 
 
 Table of Contents
@@ -20,12 +22,6 @@ Table of Contents
          * [Terminal Output](#terminal-output)
       * [Example Output](#example-output)
       * [References](#references)
-
-
-
-<br>
-
-<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/nanopore_squiggle.png width=1000 >
 
 ## General Description
 
