@@ -8,22 +8,6 @@
 
 <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/nanopore_squiggle.png width=1000 >
 
-Table of Contents
-=================
-
-   * [BacGenomePipeline](#bacgenomepipeline)
-     
-      * [General Description](#general-description)
-      * [Installation requirements](#installation-requirements)
-      * [Usage Instructions](#usage-instructions)
-         * [Example Usage (Short argument flags)](#example-usage-short-argument-flags)
-         * [Example Usage (Long argument flags)](#example-usage-long-argument-flags)
-         * [Usage Recommendations](#usage-recommendations)
-      * [Running BacGenomePipeline Guide](#running-bacgenomepipeline-guide)
-      * [Example Output](#example-output)
-      * [References](#references)
-
-
 ## General Description
 
 
@@ -34,6 +18,11 @@ This pipeline filters raw reads to produce the best 500mb reads. The filtering p
 Optionally, the user can run Nanostat to assess read quality metrics. The best reads are then assembled using the flye genome assembler with settings adjusted to help recovery of plasmids with an imbalanced distribution. The assembly is then polished with one round of medaka-consensus polishing. The polished assembly is annotated using staramr which scans bacterial genome contigs against the ResFinder, PointFinder, and PlasmidFinder databases (used by the ResFinder webservice and other webservices offered by the Center for Genomic Epidemiology) and compiles a summary report of detected antimicrobial resistance genes. 
 
 Currently BacGenomePipeline has been tested and runs on Linux OS.
+
+
+
+<a href="https://anaconda.org/stephenfordham/bacgenomepipeline">BacGenomePipeline on Conda</a> <br><br>
+<a href="https://pypi.org/project/BacGenomePipeline/">BacGenomePipeline on PYPI </a> <br>
 
 
 <br>
@@ -91,16 +80,11 @@ Alternatively you can run the following commands:
     
 <br>
 
+### Terminal Output
 
- 
-## Running BacGenomePipeline Guide
+<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/terminal_output.png >
 
 
- <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/BacGenomePipeline.gif width=1000>
- 
-
-<br>   
-   
 ## Example Output
 
 
