@@ -44,6 +44,8 @@ Currently BacGenomePipeline has been tested and runs on Linux OS.
 
 ## Installation requirements
 ### Conda Install
+[![Anaconda-Server Badge](https://anaconda.org/stephenfordham/bacgenomepipeline/badges/installer/conda.svg)](https://conda.anaconda.org/stephenfordham) 
+[![Anaconda-Server Badge](https://anaconda.org/stephenfordham/bacgenomepipeline/badges/platforms.svg)](https://anaconda.org/stephenfordham/bacgenomepipeline)
 
 The simplest way to install BacGenomePipeline is running the following command:
 
