@@ -25,6 +25,7 @@ Table of Contents
 
 ## General Description
 
+# under active update, please visit on 22/02/21 for updated version
 
 BacGenomePipeline is a complete convenience bacterial genome assembly pipeline. Assembled and annotated bacterial genomes can be created with only raw reads as input! BacGenomePipeline can accept either fastq or gzipped fastq files. Relax and grab a coffee while BacGenomePipeline does the genomic heavy lifting.
 
