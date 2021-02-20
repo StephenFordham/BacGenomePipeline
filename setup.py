@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 classifiers = [
-    'Development Status :: 5 - Production/Stable',
+    'Development Status :: 5 - Development/beta',
     'Intended Audience :: Education',
     'Operating System :: POSIX :: Linux',
     'License :: OSI Approved :: MIT License',
@@ -10,7 +10,7 @@ classifiers = [
 
 setup(
     name='BacGenomePipeline',
-    version='1.0',
+    version='1.0.1',
     description='Complete Bacterial Genome Assembly and Annotation Pipeline',
     long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
     url='https://github.com/StephenFordham/BacGenomePipeline',

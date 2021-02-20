@@ -1,0 +1,11 @@
+Change Log
+==========
+
+BacGenomePipeline
+
+v.1.0.01 (20/02/21)
+-------------------
+
+- BacGenomePipeline Usage instructions update
+- virulence gene detection added
+- pipeline option modes added 
