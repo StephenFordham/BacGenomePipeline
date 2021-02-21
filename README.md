@@ -25,16 +25,60 @@ Table of Contents
 
 ## General Description
 
-# under active update, please visit on 22/02/21 for updated version
+### BacGenomePipeline
 
-BacGenomePipeline is a complete convenience bacterial genome assembly pipeline. Assembled and annotated bacterial genomes can be created with only raw reads as input! BacGenomePipeline can accept either fastq or gzipped fastq files. Relax and grab a coffee while BacGenomePipeline does the genomic heavy lifting.
+Complete Bacterial Genome Assembly and Annotation Pipeline
 
-This pipeline filters raw reads to produce the best 500mb reads. The filtering process also places weight on read quality, to ensure small high quality reads are not discarded. This is considered vital to aid the recovery of small plasmids present within bacterial strains.
+Program developed by Stephen Fordham
 
-Optionally, the user can run Nanostat to assess read quality metrics. The best reads are then assembled using the flye genome assembler with settings adjusted to help recovery of plasmids with an imbalanced distribution. The assembly is then polished with one round of medaka-consensus polishing. The polished assembly is annotated using staramr which scans bacterial genome contigs against the ResFinder, PointFinder, and PlasmidFinder databases (used by the ResFinder webservice and other webservices offered by the Center for Genomic Epidemiology) and compiles a summary report of detected antimicrobial resistance genes. 
 
-Currently BacGenomePipeline has been tested and runs on Linux OS.
+## General Description
 
+BacGenomePipeline is a complete convenience bacterial genome assembly pipeline. Assembled and annotated bacterial
+genomes can be created with only Oxford Nanopore long raw reads as input! BacGenomePipeline can accept 
+either fastq or gzipped fastq files.
+
+Relax and grab a coffee while BacGenomePipeline does the genomic heavy lifting.
+
+This pipeline filters raw reads to produce the best 500mb reads.
+The filtering process also places weight on read quality, to ensure small high quality reads are not discarded.
+This is considered vital to aid the recovery of small plasmids present within bacterial strains.
+
+Optionally, the user can run Nanostat to assess read quality metrics. The best reads are then assembled using the
+flye genome assembler with settings adjusted to help recovery of plasmids with an imbalanced distribution.
+Optionally, the assembly is then polished with one round of medaka-consensus polishing. The polished assembly is annotated 
+using staramr which scans bacterial genome contigs against the ResFinder, PointFinder, and PlasmidFinder databases
+(used by the ResFinder webservice and other webservices offered by the Center for Genomic Epidemiology) and abricate and 
+compiles a summary report of detected antimicrobial resistance and virulence genes.
+
+The default settings selected in BacGenomePipeline have been tested against challenging gemomes, such as _Klebsiella pneumoniae_ 
+strain ATCC700721/MGH78578. This strain contains 2 small plasmids (3.4kb and 4.2kb), two medium sized plasmids (88kb and 107.5kb),
+and one large plasmid (175kb) in addtion to the chromosome (5.3mb). The pipeline was able to successfully build to closure (i.e.
+assemble as a circular unitig) all structures exlusively using ONT long reads! 
+
+BacGenomePipline can now be run in 4 modes. These modes include; pipeline, pipe_red_mem, assembly and annotation. These modes
+offer the user more flexibility when using BacGenomePipe. For example, the user may want to _only_ run an assembly, alternatively the 
+user may have a gemome assembly in FASTA format and want to annotate the assembly for antimicrobial resistance and virulence genes.
+
+Additionally, BacGenomePipeline can be run in 4 modes. 
+
+These modes include:
+1. Running the entire pipeline workflow. <br>
+  ```--pipeline```
+2. Running the pipeline using reduced memory by setting parameters for genome size and coverage for initial disjointings. <br>
+  ```--pipe_red_mem```
+3.  Running a genome only assembly. <br>
+  ```--assembly```
+4. Running the annotation step on an pre-exisiing genome assembly in FASTA format. <br>
+```--annotation```
+
+<br>
+For usage instructions, run:
+
+    BacGenomePipeline --help
+
+
+Currently, BacGenomePipeline has been tested and runs on Linux OS.
 
 
 <a href="https://anaconda.org/stephenfordham/bacgenomepipeline">BacGenomePipeline on Conda</a> <br><br>
@@ -56,11 +100,11 @@ The simplest way to install BacGenomePipeline is running the following command:
 I recommend installing BacGenomePipeline in a conda virtual environment:
 For example:
 
-    conda create -n bio_venv
+    conda create -n pipeline
     
-    conda activate bio_venv
+    conda activate pipeline
     
-    (bio_venv) conda install -c stephenfordham bacgenomepipeline
+    (pipeline) conda install -c stephenfordham bacgenomepipeline
 
 Enter y, when promoted to install dependenies in your terminal window. 
 
@@ -71,38 +115,102 @@ Alternatively you can run the following commands:
      pip install BacGenomePipeline
      conda install -c bioconda filtlong==0.2.0
      conda install -c bioconda flye==2.8.1
+     conda install -c bioconda abricate==1.0.1
      
 
 ## Usage Instructions
 
+For useful usage instructions, run
+```BacGenomePipline --help```
 
-```usage: BacGenomePipeline [-h] -f  [-n] -d  -p -a```
+BacGenomePipline can be run in one of four usage modes. The usage mode must be specified explicitly in the terminal.
+A selection of examples of BacGenomePipeline run in different usage modes is shown at the bottom of the help
+message and in the usage example section on this page.
 
-              Complete Bacterial Genome Assembly and Annotation Pipeline
+    usage: BacGenomePipeline (--pipeline | --pipe_red_mem | --assembly | --annotation)
+    --fastq_file READS
+           --help --version
+           [--nanostats] [--medaka_polish]
+           [--mean_q_weight] [--asm_fasta]
+           [--genome_size SIZE]  [--asm_coverage INT]
+           [--flye_dir DIR_NAME] [--polished_dir DIR_NAME]
+           [--amr_dir DIR_NAME]  [--vir_dir DIR_NAME]
 
-              optional arguments:
-              -h,  --help           show this help message and exit
-              -f , --fastq_file     Specify an input Fastq file for the Pipeline
-              -n,  --nanostats      Optionally run a NanoStats report on your filtered read set
-              -d , --flye_dir       Specify a Flye Genome assembly directory name
-              -p , --polished_dir   Specify a Medaka Polished genome directory name
-              -a , --amr_dir        Specify a Antimicrobial resistance directory name
+    Complete Bacterial Genome Assembly and Annotation Pipeline
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      --pipeline            Runs the entire Pipeline
+      --pipe_red_mem        Runs the entire Pipeline with reduced memory
+                            consumption
+      --assembly            Runs the assembly portion of the pipeline
+      --annotation          Runs the annotation portion of the pipeline
+
+    Version:
+      --version             Print version and exit.
+
+    Input fastq Reads (a fastq file is required):
+      -f , --fastq_file     Specify an input Fastq file for the Pipeline and
+                            assembly modes
+
+    Pipeline Options:
+      -n, --nanostats       Optionally run NanoStats on your filtered read set
+      -m, --medaka_polish   Optionally run NanoStats on your filtered read set
+      -s , --asm_fasta      Add Genome assembly in fasta format
+      -w , --q_weight       Add mean_q_weight for read filtering
+
+    Optional flye assembly arguments
+    (To reduce memory consumption for large genome assemblies):
+      -g , --genome_size    Estimated genome size (for example, 5m or 2.6g)
+      -c , --asm_coverage   reduced coverage for initial disjointig assembly [not
+                            set]
+
+    Directory names:
+      -d , --flye_dir       Specify a flye genome assembly directory name
+      -p , --polished_dir   Specify a medaka polished genome directory name
+      -a , --amr_dir        Specify a antimicrobial resistance directory name
+      -v , --vir_dir        Specify a virulence gene directory name
+
+    Did you know? BacGenomePipeline can be run in modes
+
+    These modes include: pipeline, which runs the entire BacGenomePipeline workflow,
+    pipe_red_mem, which uses less memory by using use a subset of the longest reads 
+    for initial disjointig by specifying --asm-coverage and --genome-size options. 
+    The assembly mode runs assembly and polishing steps only. For this step, 
+    annotation is excluded. Finally the annotation mode takes a genome assembly and 
+    annotates it for antimicrobial and virulence genes 
+
+    Example Usage:
+    BacGenomePipeline --pipeline -f reads.fastq
+    BacGenomePipeline --pipeline -f reads.fastq.gz -m -n
+    BacGenomePipeline --pipe_red_mem -f reads.fastq -g 5.7m -c 40 -n -m
+    BacGenomePipeline --annotation -s assembly.fasta
+    BacGenomePipeline --assembly -f reads.fastq -n -m
+
               
        
-### Example Usage (Short argument flags)
+### Example Usage 
+    BacGenomePipeline --pipeline -f reads.fastq
+    BacGenomePipeline --pipeline -f reads.fastq.gz -m -n
+    BacGenomePipeline --pipe_red_mem -f reads.fastq -g 5.7m -c 40 -n -m
+    BacGenomePipeline --annotation -s assembly.fasta
+    BacGenomePipeline --assembly -f reads.fastq -n -m
 
-    BacGenomePipeline -f reads.fastq -n -d flye_amr_dir -p pol_dir -a bac_amr_dir
-    
-### Example Usage (Long argument flags)
-
-    BacGenomePipeline --fastq_file reads.fastq --nanostats --flye_dir flye_asm_dir --polished_dir complete_pol_dir --amr_dir bac_amr_dir
     
 <br>
 
-### Terminal Output
+### Example usage on the command line 
+#### Pipeline mode 
+<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/pipeline_mode.png />
 
-<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/terminal_output.png >
+#### Pipeline reduced memory mode 
+<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/pipe_red_mem_mode.png />
 
+#### Assembly mode
+<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/assembly_only_mode.png />
+
+#### Annotation mode 
+<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/annotation_mode.png />
 
 ## Example Output
 
@@ -125,6 +233,9 @@ assembly.gfa file in flye directory rendered via Bandage
 
 <sub>Figure 2  Sample AMR data available via amr_dir </sub><br>
 
+<img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/virulence_metadata.png />
+
+<sub>Figure 3  Sample virulence gene data obtained when the entire pipeline or the annotaion portion of the pipeline runs </sub><br>
 
 <br>
 
