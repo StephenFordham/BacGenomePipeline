@@ -6,6 +6,28 @@
 
 <img src=https://github.com/StephenFordham/BacGenomePipeline/blob/main/static/nanopore_squiggle.png width=1000 >
 
+Table of Contents
+=================
+
+   * [BacGenomePipeline](#bacgenomepipeline)
+      * [Complete Bacterial Genome Assembly and Annotation Pipeline](#complete-bacterial-genome-assembly-and-annotation-pipeline)
+      * [General Description](#general-description)
+         * [BacGenomePipeline](#bacgenomepipeline-1)
+      * [General Description](#general-description-1)
+      * [Installation requirements](#installation-requirements)
+         * [Conda Install](#conda-install)
+         * [Pip Install](#pip-install)
+      * [Usage Instructions](#usage-instructions)
+         * [Example Usage](#example-usage)
+         * [Example usage on the command line](#example-usage-on-the-command-line)
+            * [Pipeline mode](#pipeline-mode)
+            * [Pipeline reduced memory mode](#pipeline-reduced-memory-mode)
+            * [Assembly mode](#assembly-mode)
+            * [Annotation mode](#annotation-mode)
+      * [Example Output](#example-output)
+      * [References](#references)
+
+
 
 ## General Description
 
