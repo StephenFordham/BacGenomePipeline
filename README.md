@@ -66,7 +66,7 @@ BacGenomePipline can now be run in 4 modes. These modes include; pipeline, pipe_
 offer the user more flexibility when using BacGenomePipe. For example, the user may want to _only_ run an assembly, alternatively the 
 user may have a gemome assembly in FASTA format and want to annotate the assembly for antimicrobial resistance and virulence genes.
 
-Additionally, BacGenomePipeline can be run in 4 modes. 
+BacGenomePipeline can be run in 4 modes. 
 
 These modes include:
 1. Running the entire pipeline workflow. <br>
