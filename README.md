@@ -64,7 +64,7 @@ assemble as a circular unitig) all structures exlusively using ONT long reads!
 
 BacGenomePipline can now be run in 4 modes. These modes include; pipeline, pipe_red_mem, assembly and annotation. These modes
 offer the user more flexibility when using BacGenomePipe. For example, the user may want to _only_ run an assembly, alternatively the 
-user may have a gemome assembly in FASTA format and want to annotate the assembly for antimicrobial resistance and virulence genes.
+user may have a genome assembly in FASTA format and want to annotate the assembly for antimicrobial resistance and virulence genes.
 
 BacGenomePipeline can be run in 4 modes. 
 
