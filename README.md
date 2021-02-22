@@ -60,7 +60,7 @@ compiles a summary report of detected antimicrobial resistance and virulence gen
 The default settings selected in BacGenomePipeline have been tested against challenging gemomes, such as _Klebsiella pneumoniae_ 
 strain ATCC700721/MGH78578. This strain contains 2 small plasmids (3.4kb and 4.2kb), two medium sized plasmids (88kb and 107.5kb),
 and one large plasmid (175kb) in addtion to the chromosome (5.3mb). The pipeline was able to successfully build to closure (i.e.
-assemble as a circular unitig) all structures exlusively using ONT long reads! 
+assemble as a circular unitig) all structures exclusively using ONT long reads! 
 
 BacGenomePipline can now be run in 4 modes. These modes include; pipeline, pipe_red_mem, assembly and annotation. These modes
 offer the user more flexibility when using BacGenomePipe. For example, the user may want to _only_ run an assembly, alternatively the 
