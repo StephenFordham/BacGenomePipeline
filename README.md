@@ -127,7 +127,7 @@ Alternatively you can run the following commands:
 ## Usage Instructions
 
 For useful usage instructions, run
-```BacGenomePipline --help```
+```BacGenomePipeline --help```
 
 BacGenomePipline can be run in one of four usage modes. The usage mode must be specified explicitly in the terminal.
 A selection of examples of BacGenomePipeline run in different usage modes is shown at the bottom of the help
